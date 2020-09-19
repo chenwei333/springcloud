@@ -1,13 +1,18 @@
 package com.wei.result;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-public class SimpleResponse <T> extends CommonResponse{
+@NoArgsConstructor //无参数的构造器
+public class SimpleResponse <T> {
+    private Integer code;
+    private String message;
     private  T t;
 
     public SimpleResponse(T t,String message) {
-        super(message);
+        this.code =200;
+        this.message =message;
         this.t = t;
     }
 }

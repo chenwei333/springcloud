@@ -1,8 +1,10 @@
 package com.wei.result;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor //无参数的构造器
 public class CommonResponse {
 
     private Integer code;
@@ -10,11 +12,6 @@ public class CommonResponse {
 
     public CommonResponse( String message) {
         this.code =  200;
-        this.message =  message;
-    }
-
-    public CommonResponse(Integer code, String message) {
-        this.code =  code;
         this.message =  message;
     }
 }
