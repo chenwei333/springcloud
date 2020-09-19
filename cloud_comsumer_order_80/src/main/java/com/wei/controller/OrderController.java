@@ -14,9 +14,9 @@ import javax.annotation.Resource;
 @RequestMapping("comsumer")
 public class OrderController {
 
-    public static final String PAYENT_URL = "http://localhost:8001"; //通过Ip访问
+//    public static final String PAYENT_URL = "http://localhost:8001"; //通过Ip访问
 
-//    public static final String PAYENT_URL = "http://CLOUD-PAYMENT-SERVICE";  //通过服务进行访问
+    public static final String PAYENT_URL = "http://CLOUD-PAYMENT-SERVICE";  //通过服务进行访问
     @Resource
     private RestTemplate restTemplate;
 

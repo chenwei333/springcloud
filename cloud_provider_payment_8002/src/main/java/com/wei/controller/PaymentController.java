@@ -30,7 +30,6 @@ public class PaymentController {
     @Value("${server.port}")
     private String serverPort;
 
-
     /**
      * 通过主键查询单条数据
      *
@@ -41,7 +40,7 @@ public class PaymentController {
     public SimpleResponse<Payment> selectOne(@PathVariable("id") Long id) {
         Payment payment = this.paymentService.queryById(id);
 
-        return new SimpleResponse<Payment>(payment,"select success ! --- " + this.serverPort );
+        return new SimpleResponse<Payment>(payment,"select success! ---- " + this.serverPort);
     }
 
     @PostMapping("create")
@@ -49,7 +48,7 @@ public class PaymentController {
         Payment insert = this.paymentService.insert(payment);
         System.out.println(insert);
         System.out.println("1234567890");
-        return new CommonResponse("insert success  " + this.serverPort );
+        return new CommonResponse("insert success---" + this.serverPort);
     }
 
 
