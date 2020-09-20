@@ -2,11 +2,16 @@ package com.wei.controller;
 
 import com.wei.entities.Payment;
 import com.wei.result.CommonResponse;
+import com.wei.result.ListResponse;
 import com.wei.result.SimpleResponse;
 import com.wei.service.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 /**
@@ -30,6 +35,9 @@ public class PaymentController {
     @Value("${server.port}")
     private String serverPort;
 
+    @Autowired
+    private DiscoveryClient discoveryClient; //获取注册中心的信息
+
     /**
      * 通过主键查询单条数据
      *
@@ -51,5 +59,20 @@ public class PaymentController {
         return new CommonResponse("insert success---" + this.serverPort);
     }
 
+    @GetMapping("get/selectMsg")
+    public ListResponse<ServiceInstance> selectMsg() {
+        List<String> services = discoveryClient.getServices();
+        services.forEach(service->{
+            System.out.println("----service"+service);
+        });
+        List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
+        for (ServiceInstance instance : instances) {
+            System.out.println(instance.getServiceId()+"\t" + instance.getHost()+"\t"+ instance.getPort()+"\t"+instance.getUri());;
+        }
+
+        return new ListResponse<>(instances,"查询数据信息成功");
+
+
+    }
 
 }

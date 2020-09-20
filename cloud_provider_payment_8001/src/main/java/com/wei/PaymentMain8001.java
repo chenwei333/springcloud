@@ -7,7 +7,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
 @EnableEurekaClient //eureka 时使用
-//@EnableDiscoveryClient
+@EnableDiscoveryClient
 public class PaymentMain8001 {
 
     public static void main(String[] args) {
