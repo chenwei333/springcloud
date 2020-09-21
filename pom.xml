@@ -42,6 +42,18 @@
     <mybatis.springboot.version>1.3.0</mybatis.springboot.version>
     <mysql.version>8.0.18</mysql.version>
   </properties>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+          <source>8</source>
+          <target>8</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
   <dependencyManagement>
     <!--只是在父项目中强制说明版本，并没有实际的映入，只有子项目使用的时候才会映入-->

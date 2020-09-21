@@ -1,12 +1,15 @@
 package com.wei;
 
+import com.rule.MyRule;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.ribbon.RibbonClient;
 
 @SpringBootApplication
 @EnableEurekaClient //eureka 时使用
 //@EnableDiscoveryClient
+@RibbonClient(name = "CLOUD-PAYMENT-SERVICE" ,configuration = MyRule.class) //配置服务，访问这个服务的时候，使用这个规则
 public class OrderMain80 {
 
     public static void main(String[] args) {
