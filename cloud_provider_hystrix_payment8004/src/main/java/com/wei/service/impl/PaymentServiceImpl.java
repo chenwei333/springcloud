@@ -40,6 +40,6 @@ public class PaymentServiceImpl implements PaymentService {
     }
 
     public void doTimeOut_fallbackHandler(Integer id){
-        System.out.println("fallback ------"+ id );
+        System.out.println("fallback ------"+ id + "8004服务降级" );
     }
 }

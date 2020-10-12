@@ -10,7 +10,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
 @EnableFeignClients
-@EnableHystrix
+@EnableHystrix //使用hystrix
 public class PaymentComsumerHystrixMain83 {
 
     public static void main(String[] args) {

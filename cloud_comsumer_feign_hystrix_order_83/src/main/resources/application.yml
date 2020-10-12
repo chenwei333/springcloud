@@ -5,6 +5,9 @@ spring:
   application:
     name: cloud-payment-comsumer-hystrix-service
 
+feign:
+  hystrix:
+    enabled: true
 eureka:
   client:
     service-url:
