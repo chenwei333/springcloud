@@ -11,9 +11,10 @@ eureka:
   client:
     fetch-registry: false  #不注册自己
     register-with-eureka: false # 不检索自己
-    service-url:
+#    不注册方便测试
+#    service-url:
 #      defaultZone: http://www.eureka7002.com:7002/eureka/
-      defaultZone: http://eureka7002.com:7002/eureka/, http://eureka7003.com:7003/eureka/ #指的是服务发现和注册的地址
+#      defaultZone: http://eureka7002.com:7002/eureka/, http://eureka7003.com:7003/eureka/ #指的是服务发现和注册的地址
 #  server:
     #关闭自我保护机制，保证不可用服务立即被踢出
 #    enable-self-preservation: false

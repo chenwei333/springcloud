@@ -1,0 +1,12 @@
+server:
+  port: 83
+
+spring:
+  application:
+    name: cloud-payment-comsumer-hystrix-service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+    register-with-eureka: false
