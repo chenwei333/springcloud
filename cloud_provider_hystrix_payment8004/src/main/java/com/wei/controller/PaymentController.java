@@ -60,4 +60,10 @@ public class PaymentController {
         return new CommonResponse("执行时间 " + this.serverPort );
     }
 
+    //服务熔断
+    @GetMapping("paymentCircuitBreaker/{id}")
+    public CommonResponse paymentCircuitBreaker(@PathVariable("id") Integer id) {
+        paymentService.paymentCircuitBreaker(id);
+        return new CommonResponse("执行时间 " + this.serverPort );
+    }
 }

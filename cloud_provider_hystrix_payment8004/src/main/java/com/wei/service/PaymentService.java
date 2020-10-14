@@ -8,6 +8,6 @@ public interface PaymentService {
 
     void doTimeOut(Integer id);
 
-
+    String paymentCircuitBreaker(Integer id);
 
 }
