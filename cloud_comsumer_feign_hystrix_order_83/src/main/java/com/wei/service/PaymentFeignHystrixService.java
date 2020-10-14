@@ -2,13 +2,14 @@ package com.wei.service;
 
 
 import com.wei.result.CommonResponse;
+import com.wei.service.impl.PaymentHystrixServiceImpl;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @Component
-@FeignClient(value = "CLOUD-PAYMENT-HYSTRIX-SERVICE") //配置feign参数调用
+@FeignClient(value = "CLOUD-PAYMENT-HYSTRIX-SERVICE" ,fallback = PaymentHystrixServiceImpl.class) //配置feign参数调用
 public interface PaymentFeignHystrixService {
 
 
