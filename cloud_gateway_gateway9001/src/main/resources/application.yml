@@ -1,0 +1,32 @@
+server:
+  port: 9001
+
+
+spring:
+  application:
+    name: cloud-name
+  cloud:
+   gateway:
+     routes:
+       id: payment_routh #路由的ID，没有固定规则单要求唯一
+       uri: http://localhost:8001 # 匹配提供的路由地址
+       predicates:
+        Path=/payment/get/** # 断言，路径的配置进行路由
+
+
+# cloud:
+#   gateway:
+#     routes:
+#      - id: payment_routh #路由的ID，没有固定规则单要求唯一
+#        uri: http://localhost:8001 # 匹配提供的路由地址
+#        predicates:
+#          - Path=/payment/get/** # 断言，路径的配置进行路由
+#      - id: payment_routh #路由的ID，没有固定规则单要求唯一
+#        uri: http://localhost:8001 # 匹配提供的路由地址
+#        predicates:
+#          - Path=/payment/post/** # 断言，路径的配置进行路由
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+    register-with-eureka: false

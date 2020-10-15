@@ -19,6 +19,7 @@
       <module>cloud_comsumer_feign_order81</module>
       <module>cloud_provider_hystrix_payment8004</module>
       <module>cloud_comsumer_feign_hystrix_order_83</module>
+      <module>cloud_gateway_gateway9001</module>
   </modules>
   <packaging>pom</packaging>
 
